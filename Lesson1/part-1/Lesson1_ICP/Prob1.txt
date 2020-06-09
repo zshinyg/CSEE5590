@@ -1,0 +1,8 @@
+1. State differences between Python 2 and Python 3 version.
+    There are many differences between Python2 and Python3. The main differences according to the link 
+    provided in class are...
+    1. Python 2 is Legacy while Python 3 is Future
+    2. They both have some incompatable libraries
+    3. Python 3 has better Unicode Support
+    4. Python 3 has improved integer division
+    5. The print syntaxes differ.
