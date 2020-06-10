@@ -9,7 +9,7 @@ while(PythonStr != 'Python'):                                   # Take in Python
 
 pyList = list(PythonStr)                                        # convert to list of chars
 
-pyList.remove('P')                                              # remove H and O
+pyList.remove('P')                                              # remove P and O
 pyList.remove('o')
 
 pyList.reverse()                                                # Reverse the List
