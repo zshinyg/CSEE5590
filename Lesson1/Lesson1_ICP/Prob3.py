@@ -9,7 +9,5 @@ if not pyWord in sentence:
     print("That sentence does not inlcude python. Please try again.\n")     # make sure the sentence contains python
     sentence = input()
 
-sentence.lower()                                                            # convert the sentence to lowercase just in case
-                                                                            # the first word is python. 
 print("Here is your new sentence:\n")
 print(sentence.replace("python", "pythons"))                                #print the new sentence
