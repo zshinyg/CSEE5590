@@ -7,20 +7,22 @@
 # Output: [68.03, 70.3, 65.77, 67.13]
 
 
-NumberOfStudents = 0
-list_WeightsInLBS = []
-list_WeightsInKilograms =[]
-list_roundedWeightsInKilograms = []
-i = 0
-
 def lbsToKilogramsConversion(lbs = 0):                                     #function that converts lbs to kilograms
     kilograms = lbs * 0.45359237
     return kilograms
 
 
-NumberOfStudents = input("Please Enter the number of students you would like in the list:")
-NumberOfStudents = int(NumberOfStudents)                                                        #convert input to int
+NumberOfStudents = 0                                                       #Variable and list declarations
+list_WeightsInLBS = []
+list_WeightsInKilograms =[]
+list_roundedWeightsInKilograms = []
 
+
+NumberOfStudents = input("Please Enter the number of students you would like in the list:")
+NumberOfStudents = int(NumberOfStudents)  
+
+                                                      #convert input to int
+i = 0
 while i < NumberOfStudents:
     list_WeightsInLBS.insert(i,int(input("Enter the students weight in lbs:")))                 #insert the weights for the  
                                                                                                 #specified number of students.
@@ -36,7 +38,6 @@ while i < NumberOfStudents:
 list_roundedWeightsInKilograms = [round(num,2) for num in list_WeightsInKilograms]              #round weights to hundreths place
 
 print("List in lbs: ", list_WeightsInLBS)
-
 print("List in kilograms:" , list_roundedWeightsInKilograms)
 
 
