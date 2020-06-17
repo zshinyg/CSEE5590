@@ -24,7 +24,6 @@ link_containers = bsObj.find_all('a')
 print(bsObj.title.string)
 
 for link in link_containers:
-    print(link.get('href'))
     file.write(str(link.get('href')))
     file.write("\n")
 
