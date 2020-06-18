@@ -18,4 +18,4 @@ acc_LinearSVC = round(LinearSVC.score(X_train, y_train) * 100, 2)
 print("Linear SVC accuracy is:", acc_LinearSVC)
 
 #Classification Report
-print(classification_report(y_test, Y_pred))
+print(classification_report(y_test, Y_pred, zero_division = 1))
