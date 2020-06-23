@@ -5,9 +5,14 @@ from sklearn.metrics import accuracy_score
 from sklearn.metrics import classification_report
 from sklearn.svm import SVC, LinearSVC
 
+# visualization
+import seaborn as sns
+import matplotlib.pyplot as plt
+
 
 
 df = pd.read_csv("Python_Lesson4/Python_Lesson4/glass.csv")
+df.info()
 X = df.drop("Type", axis =1)
 y = df["Type"]
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.4, random_state = 0)
