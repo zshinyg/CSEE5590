@@ -3,8 +3,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
-
-
 dataset = pd.read_csv('Python_Lesson6/Python_Lesson6_ICP/CC.csv')
 
 dataset.info()
@@ -20,13 +18,13 @@ y = dataset.iloc[:,-1]
 print(x.shape, y.shape)
 
 
-
+##KMEANS
 from sklearn.cluster import KMeans
 nclusters = 3 # this is the k in kmeans
 km = KMeans(n_clusters=nclusters)
 km.fit(x)
 
-#predict the cluster for each data point
+##SILHOUETTE SCORE
 y_cluster_kmeans = km.predict(x)
 from sklearn import metrics
 score = metrics.silhouette_score(x, y_cluster_kmeans)
@@ -34,7 +32,7 @@ print(score)
 
 
 
-##elbow method to know the number of clusters
+##ELBOW METHOD
 from sklearn.cluster import KMeans
 wcss = []
 for i in range(1,11):

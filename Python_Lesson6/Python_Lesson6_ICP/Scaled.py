@@ -23,13 +23,13 @@ scaler.fit(x)
 X_scaled_array = scaler.transform(x)
 X_scaled = pd.DataFrame(X_scaled_array, columns = x.columns)
 
-
+#KMEANS
 from sklearn.cluster import KMeans
 nclusters = 3 # this is the k in kmeans
 km = KMeans(n_clusters=nclusters)
 km.fit(X_scaled)
 
-#predict the cluster for each data point
+##SILHOUETTE SCORE
 y_cluster_kmeans = km.predict(X_scaled)
 from sklearn import metrics
 score = metrics.silhouette_score(X_scaled, y_cluster_kmeans)

@@ -17,30 +17,26 @@ y = dataset.iloc[:,-1]
 
 from sklearn.preprocessing import StandardScaler
 scaler = StandardScaler()
-# Fit on training set only.
 scaler.fit(x)
 
 x_scaler = scaler.transform(x)
 pca = PCA(2)
 x_pca = pca.fit_transform(x_scaler)
 
-df2 = pd.DataFrame(data=x_pca)
-finaldf = pd.concat([df2,dataset[['TENURE']]],axis=1)
+pca_datset = pd.DataFrame(data=x_pca)
+finaldf = pd.concat([pca_datset,dataset[['TENURE']]],axis=1)
 print(finaldf)
 
 x = finaldf.iloc[:,[0,1,2]]
 y = finaldf.iloc[:,-1]
 
-print(x.shape, y.shape)
-
-
-
+##KMEANS
 from sklearn.cluster import KMeans
 nclusters = 3 # this is the k in kmeans
 km = KMeans(n_clusters=nclusters)
 km.fit(x)
 
-#predict the cluster for each data point
+##SILHOUETTE SCORE
 y_cluster_kmeans = km.predict(x)
 from sklearn import metrics
 score = metrics.silhouette_score(x, y_cluster_kmeans)
