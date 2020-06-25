@@ -7,6 +7,8 @@ import matplotlib.pyplot as plt
 
 dataset = pd.read_csv('Python_Lesson6/Python_Lesson6_ICP/CC.csv')
 
+dataset.info()
+
 #Drop missing data
 dataset = dataset.select_dtypes(include=[np.number]).interpolate().dropna()
 
@@ -20,7 +22,7 @@ print(x.shape, y.shape)
 
 
 from sklearn.cluster import KMeans
-nclusters = 7 # this is the k in kmeans
+nclusters = 3 # this is the k in kmeans
 km = KMeans(n_clusters=nclusters)
 km.fit(x)
 
@@ -35,12 +37,12 @@ print(score)
 ##elbow method to know the number of clusters
 from sklearn.cluster import KMeans
 wcss = []
-for i in range(1,16):
+for i in range(1,11):
     kmeans = KMeans(n_clusters=i,init='k-means++',max_iter=300,n_init=10,random_state=0)
     kmeans.fit(x)
     wcss.append(kmeans.inertia_)
 
-plt.plot(range(1,16),wcss)
+plt.plot(range(1,11),wcss)
 plt.title('Elbow Method')
 plt.xlabel('Number of Clusters')
 plt.ylabel('Wcss')

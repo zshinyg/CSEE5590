@@ -36,7 +36,7 @@ print(x.shape, y.shape)
 
 
 from sklearn.cluster import KMeans
-nclusters = 7 # this is the k in kmeans
+nclusters = 3 # this is the k in kmeans
 km = KMeans(n_clusters=nclusters)
 km.fit(x)
 
@@ -46,19 +46,4 @@ from sklearn import metrics
 score = metrics.silhouette_score(x, y_cluster_kmeans)
 print(score)
 
-
-
-##elbow method to know the number of clusters
-from sklearn.cluster import KMeans
-wcss = []
-for i in range(1,16):
-    kmeans = KMeans(n_clusters=i,init='k-means++',max_iter=300,n_init=10,random_state=0)
-    kmeans.fit(x)
-    wcss.append(kmeans.inertia_)
-
-plt.plot(range(1,16),wcss)
-plt.title('the elbow method')
-plt.xlabel('Number of Clusters')
-plt.ylabel('Wcss')
-plt.show()
 
