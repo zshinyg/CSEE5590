@@ -29,7 +29,7 @@ print(corr['quality'],'\n')
 
 #Build Linear Model
 y = WineQualityDF.quality
-X = data.drop(['quality'], axis=1)
+X = data[['alcohol','volatile acidity', 'sulphates']]
 from sklearn.model_selection import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=.33)
 lr = linear_model.LinearRegression()
