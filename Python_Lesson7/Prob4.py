@@ -18,7 +18,6 @@ stem_content = snowStemmer.stem(file_content)
 ##LEMMATIZE
 from nltk.stem import WordNetLemmatizer
 lemmatizer = WordNetLemmatizer()
-
 lem_content = lemmatizer.lemmatize(file_content)
 
 
@@ -30,4 +29,3 @@ trigram_content = list(ngrams(sents,3))
 ###NRE
 from nltk import wordpunct_tokenize, pos_tag, ne_chunk
 nre_content = ne_chunk(pos_tag(wordpunct_tokenize(file_content)))
-print(nre_content)
